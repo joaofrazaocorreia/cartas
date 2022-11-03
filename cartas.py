@@ -7,7 +7,6 @@ hand2=[]
 game=True
 
 def valuefix(deck): # Converts Letters into values, and reverts the process when called again.
-
     if "J" in deck or "Q" in deck or "K" in deck or "A" in deck:
         if "J" in deck:
             deck.remove("J")
@@ -116,14 +115,18 @@ while game: #GAME LOOP
     command=input("How many cards do you want to discard? (0, 1 ,2): ")
     print("--------------------------------------")
 
-    if not command.isdigit:
-        print("Please insert numbers only.")
+    if not command.isdigit():
+        print("Please insert numbers only. Ending game...")
+        game=False
+        break
 
     else:
         command=int(command)
 
     if command > 2 or command < 0:
-        print("Please only insert values between 0 and 2.")
+        print("Please only insert values between 0 and 2. Ending game...")
+        game=False
+        break
     
     else:
         discard(command)
