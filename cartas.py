@@ -45,15 +45,6 @@ def shuffleplayer():
     print("Your deck was shuffled.")
     random.shuffle(deck1)
 
-def shufflecomp():
-    print("The opponent's deck was suffled.")
-    random.shuffle(deck2)
-
-def shuffleboth():
-    print("Both decks were shuffled.")
-    random.shuffle(deck1)
-    random.shuffle(deck2)
-
 def showdeck():
     print("Your deck: "+str(deck1))
 
@@ -124,14 +115,21 @@ def help():
     print("--------------------------------------")
 
 
-
-help()
 while game:
     
-    print("What do you want to do now?")
-    command=input("Your input: ")
-
     print("--------------------------------------")
+    print("Game Start!")
+
+    help()
+
+    shuffleplayer()
+    gofish()
+    print("Your hand:")
+    showhand()
+
+    command=input("Your input: ")
+    print("--------------------------------------")
+
     if command == "DECK":
         showdeck()
 
